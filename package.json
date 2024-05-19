@@ -1,6 +1,7 @@
 {
   "name": "memo",
   "version": "0.1.0",
+  "homepage": "https://maitreyee95.github.io/memo",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
@@ -19,6 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +47,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
   }
