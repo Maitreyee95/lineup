@@ -43,9 +43,9 @@ function Login(){
     const handleForgotClick = async () =>{
         setErrorMessage();
         if(currentEmail){
-            sendEmail(()=>navigate('/forgotpassword'))  
+            sendEmail(()=>navigate('/memo/forgotpassword'))  
         }else{
-            navigate('/forgotpassword');
+            navigate('/memo/forgotpassword');
         }
     };
      

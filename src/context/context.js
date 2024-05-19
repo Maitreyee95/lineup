@@ -51,7 +51,7 @@ function Provider({children}){
                 password
             }
         );
-        navigate("/tasks");
+        navigate("/memo/tasks");
         secureLocalStorage.setItem("id",response.data.id);
         secureLocalStorage.setItem("name",currentEmail.split("@")[0]);
         setShowLoader(false);
@@ -62,7 +62,7 @@ function Provider({children}){
         const response = await axios.get(`https://retoolapi.dev/ERSclT/data?emailId=${currentEmail}`);
         const resPassword = response.data[0].password;
         if( bcrypt.compareSync(password,resPassword)){
-            navigate("/tasks");
+            navigate("/memo/tasks");
             secureLocalStorage.setItem("id",response.data[0].id);
             secureLocalStorage.setItem("name",currentEmail.split("@")[0]);
         }else{

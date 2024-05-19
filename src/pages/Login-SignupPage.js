@@ -9,7 +9,7 @@ function LoginSignupPage(){
 
     useEffect(()=> {
         if(secureLocalStorage.getItem("id")){
-            navigate('/tasks');
+            navigate('/memo/tasks');
         }else{
             setErrorMessage();
             setCurrentEmail("");

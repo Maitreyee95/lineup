@@ -7,7 +7,7 @@ function TopBar(){
     return(
         <div>
             <span>Welcome {secureLocalStorage.getItem("name")}  </span>
-            <button className="size-fit rounded-lg p-2 border-4  text-white bg-red-600  cursor-pointer" onClick = {() => {secureLocalStorage.clear();navigate("/") }}>Logout</button>
+            <button className="size-fit rounded-lg p-2 border-4  text-white bg-red-600  cursor-pointer" onClick = {() => {secureLocalStorage.clear();navigate("/memo") }}>Logout</button>
         </div>
     )
 }

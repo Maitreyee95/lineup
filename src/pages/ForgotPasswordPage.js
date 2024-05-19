@@ -55,7 +55,7 @@ function ForgotPasswordPage(){
         setErrorMessage();
         if(newPwdRef.current.value===newConfirmPwdRef.current.value){
             resetPassword(newPwdRef.current.value);
-            navigate('/');
+            navigate('/memo');
         }else{
             setErrorMessage(<div>Passwords do not match</div>);
         }
