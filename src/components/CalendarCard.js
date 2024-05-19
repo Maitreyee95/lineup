@@ -64,9 +64,9 @@ function CalendarCard() {
             <div className="grid grid-cols-7 border-lime-800 bg-gradient-to-r from-lime-600 to-green-900 p-4 rounded-lg text-white font-extrabold">
                 <div>Sun</div>
                 <div>Mon</div>
-                <div>Tues</div>
+                <div>Tue</div>
                 <div>Wed</div>
-                <div>Thurs</div>
+                <div>Thu</div>
                 <div>Fri</div>
                 <div>Sat</div>
             </div>
