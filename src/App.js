@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Route from "./components/Route";
+import TaskPage from "./pages/TaskPage";
+import LoginSignupPage from "./pages/Login-SignupPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import { useEffect } from "react";
+import useCustomHook from "./hooks/useCustomHook";
+import secureLocalStorage from "react-secure-storage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App(){
+    const {navigate} = useCustomHook();
+    useEffect(()=>{
+        if(!secureLocalStorage.getItem("id")){
+            navigate('/');
+        }else{
+            navigate('/tasks');
+        }
+    },[]);
+    return (
+    <div className="app font-mono text-xs md:text-sm">
+        <div>
+            <Route path = '/'>
+                <LoginSignupPage />
+            </Route>
+            <Route path='/tasks'>
+                <TaskPage />
+            </Route>
+            <Route path ='/forgotpassword'>
+                <ForgotPasswordPage />
+            </Route>
+            <Route path = '/logout'>
+                <LoginSignupPage />
+            </Route>
+        </div>
+
     </div>
-  );
-}
+)
+};
 
 export default App;

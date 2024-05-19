@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app{
+    background-image: url(C:\Users\maitr\memo\src\images\background-723053_1920.jpg);
+    overflow-y: auto;
+    height: 100vh;
+   
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.login-bg{
+    background-image: url(c:\Users\maitr\memo\src\images\ai-generated-8590137_1920.jpg);
+    height: 100vh;
 }
