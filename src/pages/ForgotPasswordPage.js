@@ -27,6 +27,7 @@ function ForgotPasswordPage(){
     const handleSubmit = (event) =>{
         event.preventDefault();
         setErrorMessage();
+        
         console.log(pwdCode,codeRef.current.value)
         if(codeRef.current.value==pwdCode){
             setIsOpen(true);
@@ -41,12 +42,16 @@ function ForgotPasswordPage(){
         event.preventDefault();
         setErrorMessage();
 
-        sendEmail(()=>setShowReset(true))
+        sendEmail(()=>{
+            setShowReset(true);
+            setShowEmail(false);
+        })
         
     }
 
     const handlePwdSubmit = (event) => {
         event.preventDefault();
+        setShowReset(false);
         setErrorMessage();
         if(newPwdRef.current.value===newConfirmPwdRef.current.value){
             resetPassword(newPwdRef.current.value);

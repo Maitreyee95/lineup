@@ -43,6 +43,7 @@ function Provider({children}){
 
 
     const signUp= async(password) =>{
+        setShowLoader(true);
         password= bcrypt.hashSync(password,salt);
         const response=await axios.post('https://retoolapi.dev/ERSclT/data',
             {
@@ -53,10 +54,11 @@ function Provider({children}){
         navigate("/tasks");
         secureLocalStorage.setItem("id",response.data.id);
         secureLocalStorage.setItem("name",currentEmail.split("@")[0]);
+        setShowLoader(false);
     };
 
     const login= async (password)  => {
-
+        setShowLoader(true);
         const response = await axios.get(`https://retoolapi.dev/ERSclT/data?emailId=${currentEmail}`);
         const resPassword = response.data[0].password;
         if( bcrypt.compareSync(password,resPassword)){
@@ -66,7 +68,7 @@ function Provider({children}){
         }else{
             setErrorMessage(<div>Password is incorrect</div>)
         }
-        
+        setShowLoader(false);        
     }
 
     const getUserId =async() => {
@@ -99,12 +101,14 @@ function Provider({children}){
     }
 
     const resetPassword = async (password) =>{
+        setShowLoader(true);
         var id = await getUserId();
         password= bcrypt.hashSync(password,salt);
         if(id){
             const response = await axios.patch(`https://retoolapi.dev/ERSclT/data/${id}`,{
             password
              });
+             setShowLoader(false);
             return true;
         }
         return false;
@@ -114,6 +118,7 @@ function Provider({children}){
 
 
     const fetchTasks= async() => {
+        setShowLoader(true);
         const response= await axios.get(`https://retoolapi.dev/CFsY5q/tasks?userId=${secureLocalStorage.getItem("id")}`);
         const arr= response.data.filter((el)=>{
             var startDate= el["Start date"].split("-");
@@ -124,9 +129,11 @@ function Provider({children}){
         }
         );
        setTasks(arr);
+       setShowLoader(false);
     };
 
     const fetchPastTasks = async() => {
+        setShowLoader(true);
         const response= await axios.get(`https://retoolapi.dev/CFsY5q/tasks?userId=${secureLocalStorage.getItem("id")}`);
         const arr= response.data.filter((el)=>{
             var endDate= el["End date"].split("-");
@@ -135,6 +142,7 @@ function Provider({children}){
         }
         );
        setPastTasks(()=>{return arr});
+       setShowLoader(false);
     }
 
     const updateTasksStatus = async(status,id) => {
@@ -150,6 +158,7 @@ function Provider({children}){
     };
 
     const updateTasks = async(body,id) => {
+        setShowLoader(true);
         const response = await axios.patch(`https://retoolapi.dev/CFsY5q/tasks/${id}`,
             body
         );
@@ -171,6 +180,7 @@ function Provider({children}){
         }
 
         fetchPastTasks();
+        setShowLoader(false);
     };
 
     const addTask = async (body) => {
@@ -210,9 +220,10 @@ function Provider({children}){
     };
 
     const getCalendar = async() => {
+        setShowLoader(true);
         const response = await axios.get(`https://calendar-json-app.adaptable.app/month/${monthName}?year=${year}`);
         setCalendar(response.data[monthsArray[month]]);
-       
+        setShowLoader(false);
     };
 
     const incrementYear = () => {
