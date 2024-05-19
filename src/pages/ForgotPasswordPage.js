@@ -28,7 +28,6 @@ function ForgotPasswordPage(){
         event.preventDefault();
         setErrorMessage();
         
-        console.log(pwdCode,codeRef.current.value)
         if(codeRef.current.value==pwdCode){
             setIsOpen(true);
             setShowReset(false);

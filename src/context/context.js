@@ -73,7 +73,6 @@ function Provider({children}){
 
     const getUserId =async() => {
         const response = await axios.get(`https://retoolapi.dev/ERSclT/data?emailId=${currentEmail}`);
-        console.log(response);
         if (response.data.length >  0){
             return response.data[0].id;
         }else{
@@ -214,7 +213,6 @@ function Provider({children}){
     
 
     const navigate = (to) => {
-        console.log(to)
         window.history.pushState({}, '',to);
         setCurrentPath(to);
     };

@@ -16,9 +16,7 @@ function Checkbox({children, endDate}) {
 
     const handleClick = () =>{
         classes = classNames( taskStatus && 'line-through decoration-1','col-start-1, col-span-3 p-1 truncate');
-        console.log(taskStatus);
         setTaskStatus((currentTaskStatus) => {
-                console.log("current", currentTaskStatus);
                 updateTasksStatus(!currentTaskStatus? "Completed": "Not started",children.id);
                 return !currentTaskStatus;
             }

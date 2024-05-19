@@ -22,7 +22,6 @@ function EditTask({task, onClose}) {
         b= new Date(`${b[1]} ${b[2]} ${b[0]}`);
 
         if (b<a){
-            console.log("error");
             setShowError(true);
             return;
         }else{
