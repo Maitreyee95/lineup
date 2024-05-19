@@ -11,8 +11,8 @@ function Login(){
 
     const [showRegister, setShowRegister] = useState('');
 
-    const loginClass = classNames(!showRegister?'underline decoration-4 underline-offset-8 decoration-lime-800':'',' cursor-pointer text-xl justify-self-center' );
-    const registerClass= classNames(showRegister?'underline decoration-4 underline-offset-8  decoration-lime-800':'','cursor-pointer text-xl justify-self-center' );
+    const loginClass = classNames(!showRegister?'underline decoration-4 underline-offset-8 decoration-lime-800':'',' cursor-pointer text-lg justify-self-center' );
+    const registerClass= classNames(showRegister?'underline decoration-4 underline-offset-8  decoration-lime-800':'','cursor-pointer text-lg justify-self-center' );
 
     const handleSubmit = async (event) =>{
         event.preventDefault();
@@ -54,7 +54,8 @@ function Login(){
     return(<div className="grid items-center p-4" style={{"height": "100vh"}}>
             
             <div className="fixed border-lime-800 border-4 bg-emerald-100 rounded-lg grid justify-center justify-self-center items-center size-auto p-3 opacity-80">
-                <div className="grid grid-cols-3 justify-center p-10">
+                <div className="grid grid-cols-1 justify-self-center text-xl"> Welcome to Memo </div>
+                <div className="grid grid-cols-3 justify-center pt-3 p-10">
                     <div className={loginClass}  onClick={() =>{setErrorMessage(); setShowRegister(false)}} >Login</div>
                     <div className="justify-self-center"> | </div>
                     <div className={registerClass} onClick={() => {setErrorMessage();setShowRegister(true)}}>Register</div>
