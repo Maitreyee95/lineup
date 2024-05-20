@@ -45,7 +45,7 @@ function Checkbox({children, endDate}) {
           <li className="box-content p-2 border-4 grid lg:grid-cols-5 grid-cols-8 items-center justify-between rounded-lg text-white  bg-[#92b993] m-2 cursor-pointer">
             
                 <div className={classes} onClick={handleClick}>{children.title}</div>
-                <div className="text-right p-1 lg:col-end-6 col-end-9 col-span-4 lg:col-span-2 text-lg lg:text-2xl"> <FaCheck className={checkboxClass} onClick={handleClick}/>{endDate&&<MdInfoOutline className="inline pr-2" title={content}/>}<MdEdit className="inline pr-2" onClick={showEditTask}/><TiDelete  className=" inline" onClick={handleDelete}/></div>
+                <div className="text-right p-1 lg:col-end-6 col-end-9 col-span-4 lg:col-span-2 text-2xl"> <FaCheck className={checkboxClass} onClick={handleClick}/>{endDate&&<MdInfoOutline className="inline pr-2" title={content}/>}<MdEdit className="inline pr-2" onClick={showEditTask}/><TiDelete  className=" inline" onClick={handleDelete}/></div>
        
            
           </li>
