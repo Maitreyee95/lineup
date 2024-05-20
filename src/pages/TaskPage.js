@@ -24,8 +24,8 @@ function TaskPage(){
             <div className="grid lg:grid-cols-3 gap-6 p-5 grid-cols-1">
                 <TaskCard />
                 <CalendarCard />
-                <button className="absolute right-8 bottom-8 rounded-full box-content p-4 border-4  text-white bg-lime-600  cursor-pointer  text-xl" onClick = {() => setShowAddTask(true)}><MdAdd /></button>
                 <DueTaskCard />
+                <button className="absolute right-8 bottom-8 rounded-full box-content p-4 border-4  text-white bg-lime-600  cursor-pointer  text-xl" onClick = {() => setShowAddTask(true)}><MdAdd /></button>
                 {showAddTask && <EditTask onClose = {() => setShowAddTask(false)}/>}
                 <Loader />
 
