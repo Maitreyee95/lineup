@@ -25,11 +25,13 @@ function TaskPage(){
                 <TaskCard />
                 <CalendarCard />
                 <DueTaskCard />
-                <button className="absolute right-8 bottom-8 rounded-full box-content p-4 border-4  text-white bg-lime-600  cursor-pointer  text-xl" onClick = {() => setShowAddTask(true)}><MdAdd /></button>
-                {showAddTask && <EditTask onClose = {() => setShowAddTask(false)}/>}
-                <Loader />
-
             </div>
+            <div className="grid gap-6 p-5 pb-10 grid-cols-1 justify-items-end">
+                <button className="absolute bottom-2 size-min rounded-full p-4 border-4  text-white bg-lime-600  cursor-pointer  text-xl" onClick = {() => setShowAddTask(true)}><MdAdd /></button>
+            </div>
+            {showAddTask && <EditTask onClose = {() => setShowAddTask(false)}/>}
+            <Loader />
+
         </div>
     )
 }

@@ -16,7 +16,7 @@ function App(){
         }
     },[]);
     return (
-    <div className="app font-mono text-xs md:text-sm pb-[5em]">
+    <div className="app font-mono text-xs md:text-sm">
         <div>
             <Route path = '/lineup'>
                 <LoginSignupPage />
