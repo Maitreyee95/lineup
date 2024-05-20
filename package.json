@@ -1,7 +1,7 @@
 {
-  "name": "memo",
+  "name": "lineup",
   "version": "0.1.0",
-  "homepage": "https://maitreyee95.github.io/memo",
+  "homepage": "https://maitreyee95.github.io/lineup",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",

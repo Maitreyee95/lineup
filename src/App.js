@@ -10,24 +10,24 @@ function App(){
     const {navigate} = useCustomHook();
     useEffect(()=>{
         if(!secureLocalStorage.getItem("id")){
-            navigate('/memo');
+            navigate('/lineup');
         }else{
-            navigate('/memo/tasks');
+            navigate('/lineup/tasks');
         }
     },[]);
     return (
     <div className="app font-mono text-xs md:text-sm">
         <div>
-            <Route path = '/memo'>
+            <Route path = '/lineup'>
                 <LoginSignupPage />
             </Route>
-            <Route path='/memo/tasks'>
+            <Route path='/lineup/tasks'>
                 <TaskPage />
             </Route>
-            <Route path ='/memo/forgotpassword'>
+            <Route path ='/lineup/forgotpassword'>
                 <ForgotPasswordPage />
             </Route>
-            <Route path = '/memo/logout'>
+            <Route path = '/lineup/logout'>
                 <LoginSignupPage />
             </Route>
         </div>

@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .app{
-    background-image: url(C:\Users\maitr\memo\src\images\background-723053_1920.jpg);
+    background-image: url(C:\Users\maitr\lineup\src\images\background-723053_1920.jpg);
     overflow-y: auto;
     height: 100vh;
    
 }
 
 .login-bg{
-    background-image: url(c:\Users\maitr\memo\src\images\ai-generated-8590137_1920.jpg);
+    background-image: url(c:\Users\maitr\lineup\src\images\ai-generated-8590137_1920.jpg);
     height: 100vh;
 }

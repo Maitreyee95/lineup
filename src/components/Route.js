@@ -2,7 +2,7 @@ import useCustomHook from "../hooks/useCustomHook";
 
 function Route({ path,children}){
     const {currentPath} =useCustomHook();
-\    if(path === currentPath){
+    if(path === currentPath){
         return children;
     }
 

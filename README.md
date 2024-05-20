@@ -1,4 +1,4 @@
-# Memo - a task scheduler app
+# Line Up - a task scheduler app
 
 ## What all can be done:
 
@@ -9,6 +9,6 @@
 5. Edit your tasks.
 6. Delete your tasks.
 
-### View this website at https://maitreyee95.github.io/memo
+### View this website at https://maitreyee95.github.io/lineup
 
 Mail your suggestions to maitreyee95@gmail.com

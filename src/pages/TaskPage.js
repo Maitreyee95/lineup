@@ -13,7 +13,7 @@ function TaskPage(){
     const {navigate} =useCustomHook();
     useEffect(()=>{
         if(!secureLocalStorage.getItem("id")){
-            navigate('/memo');
+            navigate('/lineup');
         }
     },[]);
 

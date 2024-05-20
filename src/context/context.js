@@ -51,7 +51,7 @@ function Provider({children}){
                 password
             }
         );
-        navigate("/memo/tasks");
+        navigate("/lineup/tasks");
         secureLocalStorage.setItem("id",response.data.id);
         secureLocalStorage.setItem("name",currentEmail.split("@")[0]);
         setShowLoader(false);
@@ -62,7 +62,7 @@ function Provider({children}){
         const response = await axios.get(`https://retoolapi.dev/ERSclT/data?emailId=${currentEmail}`);
         const resPassword = response.data[0].password;
         if( bcrypt.compareSync(password,resPassword)){
-            navigate("/memo/tasks");
+            navigate("/lineup/tasks");
             secureLocalStorage.setItem("id",response.data[0].id);
             secureLocalStorage.setItem("name",currentEmail.split("@")[0]);
         }else{
@@ -72,10 +72,13 @@ function Provider({children}){
     }
 
     const getUserId =async() => {
+        setShowLoader(true);
         const response = await axios.get(`https://retoolapi.dev/ERSclT/data?emailId=${currentEmail}`);
         if (response.data.length >  0){
+            setShowLoader(false);
             return response.data[0].id;
         }else{
+            setShowLoader(false);
             return false;
         }
     };
