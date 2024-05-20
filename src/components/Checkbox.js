@@ -1,11 +1,9 @@
-import { MdEdit, MdDelete,  MdOutlineInfo, MdDeleteOutline, MdOutlineCheckBoxOutlineBlank, MdOutlineCheck, MdInfoOutline } from "react-icons/md";
+import { MdEdit, MdInfoOutline } from "react-icons/md";
 import classNames from "classnames";
 import { useState } from "react";
 import useCustomHook from "../hooks/useCustomHook";
 import EditTask from "./EditTask";
-import { BsFillInfoSquareFill } from "react-icons/bs";
 import { TiDelete } from "react-icons/ti";
-import { PiCheckFatLight } from "react-icons/pi";
 import { FaCheck } from "react-icons/fa";
 
 function Checkbox({children, endDate}) {
@@ -15,11 +13,11 @@ function Checkbox({children, endDate}) {
     const [showEdit, setShowEdit] = useState(false);
  
     let classes = classNames(taskStatus && 'line-through decoration-1','col-start-1, col-span-3 p-1 truncate text-sm lg:text-xl');
-    let checkboxClass = classNames(taskStatus?"text-green-700":"text-red-200","inline pr-1");
+    let checkboxClass = classNames(taskStatus?"text-green-700":"text-red-200","inline pr-2");
 
     const handleClick = () =>{
         classes = classNames( taskStatus && 'line-through decoration-1','col-start-1, col-span-3 p-1 truncate  text-sm lg:text-2xl');
-        checkboxClass = classNames(taskStatus?"text-green-700":"text-red-200","inline pr-1");
+        checkboxClass = classNames(taskStatus?"text-green-700":"text-red-200","inline pr-2");
         setTaskStatus((currentTaskStatus) => {
                 updateTasksStatus(!currentTaskStatus? "Completed": "Not started",children.id);
                 return !currentTaskStatus;
@@ -47,7 +45,7 @@ function Checkbox({children, endDate}) {
           <li className="box-content p-2 border-4 grid lg:grid-cols-5 grid-cols-8 items-center justify-between rounded-lg text-white  bg-[#92b993] m-2 cursor-pointer">
             
                 <div className={classes} onClick={handleClick}>{children.title}</div>
-                <div className="text-right p-1 lg:col-end-6 col-end-9 col-span-4 lg:col-span-2 text-lg lg:text-2xl"> <FaCheck className={checkboxClass} onClick={handleClick}/>{endDate&&<MdInfoOutline className="inline pr-1" title={content}/>}<MdEdit className="inline pr-1" onClick={showEditTask}/><TiDelete  className=" inline" onClick={handleDelete}/></div>
+                <div className="text-right p-1 lg:col-end-6 col-end-9 col-span-4 lg:col-span-2 text-lg lg:text-2xl"> <FaCheck className={checkboxClass} onClick={handleClick}/>{endDate&&<MdInfoOutline className="inline pr-2" title={content}/>}<MdEdit className="inline pr-2" onClick={showEditTask}/><TiDelete  className=" inline" onClick={handleDelete}/></div>
        
            
           </li>

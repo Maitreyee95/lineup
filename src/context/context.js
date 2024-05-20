@@ -180,7 +180,6 @@ function Provider({children}){
             const updatedTasks=tasks.filter((task) => task.id!==id);
             setTasks(updatedTasks);
         }
-
         fetchPastTasks();
         setShowLoader(false);
     };
